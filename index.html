@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Tejaswini Gaikwad — PGDM student at IMDR, Pune, with a BBA Finance background and academic projects in cost control and inventory management.">
+  <meta name="theme-color" content="#513566">
+  <title>Tejaswini Gaikwad | Finance Portfolio</title>
+  <style>
+    :root{--lav:#e9ddf5;--pale:#faf7fd;--plum:#513566;--violet:#8062a8;--white:#fff;--ink:#292430;--muted:#6c6474;--line:#e6dced}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:84px}
+    body{margin:0;background:var(--pale);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.65}
+    a{color:inherit}
+    .wrap{width:min(1100px,92%);margin:auto}
+    header{position:sticky;top:0;z-index:10;background:rgba(250,247,253,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+    .nav{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:800;color:var(--plum);letter-spacing:.02em}
+    .monogram{width:40px;height:40px;display:grid;place-items:center;border-radius:14px;background:var(--plum);color:#fff;font-family:Georgia,serif}
+    .navlinks{display:flex;align-items:center;gap:17px}
+    .navlinks a{text-decoration:none;font-size:.88rem;font-weight:650;color:#50475a}
+    .navlinks a:hover,.textlink:hover{color:var(--violet)}
+    .menu{display:none;border:1px solid var(--line);background:white;color:var(--plum);border-radius:10px;padding:9px 12px;font-size:1rem}
+    .hero{position:relative;overflow:hidden;padding:86px 0 76px;background:radial-gradient(circle at 80% 22%,#e6d5f5 0,transparent 32%),linear-gradient(135deg,#fff 0%,#f5eefb 68%,#ece0f6 100%)}
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:48px}
+    .eyebrow{font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;font-weight:800;color:var(--violet)}
+    h1{font-size:clamp(2.8rem,6.4vw,5.2rem);line-height:1.02;letter-spacing:-.055em;margin:16px 0 22px;color:var(--plum);font-weight:800}
+    .hero h2{font-size:1.15rem;margin:0 0 12px;font-weight:700}
+    .intro{max-width:600px;color:#615768;font-size:1.08rem}
+    .actions{display:flex;flex-wrap:wrap;gap:12px;margin:26px 0}
+    .btn{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;border-radius:999px;padding:12px 18px;font-weight:750;border:1px solid var(--plum);transition:transform .2s,background .2s}
+    .btn:hover{transform:translateY(-2px)}
+    .primary{background:var(--plum);color:#fff}.secondary{background:transparent;color:var(--plum)}
+    .meta{font-size:.92rem;color:var(--muted)}
+    .meta a{color:var(--plum);text-underline-offset:3px}
+    .art{min-height:350px;position:relative;display:grid;place-items:center}
+    .art:before{content:"";position:absolute;width:280px;height:280px;border:1px solid #bda6d4;border-radius:50%;box-shadow:0 0 0 28px rgba(185,160,212,.12),0 0 0 58px rgba(185,160,212,.08)}
+    .art-card{position:relative;background:rgba(255,255,255,.8);border:1px solid rgba(255,255,255,.9);border-radius:26px;padding:25px;width:min(310px,90%);box-shadow:0 24px 65px rgba(81,53,102,.15);transform:rotate(2deg)}
+    .art-card small{color:var(--muted);letter-spacing:.12em;text-transform:uppercase;font-weight:750}
+    .art-card strong{display:block;font-size:1.35rem;color:var(--plum);margin:5px 0 20px}
+    .chart{width:100%;height:120px}
+    .chart-caption{display:flex;justify-content:space-between;font-size:.8rem;color:var(--muted);margin-top:8px}
+    section{padding:76px 0}
+    section:nth-of-type(even){background:#fff}
+    .section-kicker{font-size:.75rem;text-transform:uppercase;letter-spacing:.18em;color:var(--violet);font-weight:850}
+    .section-title{font-size:clamp(2rem,4vw,3rem);line-height:1.12;color:var(--plum);letter-spacing:-.035em;margin:8px 0 24px}
+    .lead{font-size:1.06rem;color:#5f5668;max-width:780px}
+    .three{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}
+    .pillcard,.card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:22px}
+    .pillcard{background:linear-gradient(140deg,#fff,#f2eafa);color:var(--plum);font-weight:750}
+    .timeline{margin-top:28px;border-left:2px solid #d6c2e8;padding-left:25px;display:grid;gap:18px}
+    .edu{position:relative;background:#fff;border:1px solid var(--line);border-radius:16px;padding:19px 22px}
+    .edu:before{content:"";position:absolute;left:-34px;top:24px;width:14px;height:14px;border-radius:50%;background:var(--violet);border:3px solid var(--pale)}
+    .edu h3,.card h3{margin:0;color:var(--plum);font-size:1.18rem}
+    .edu p{margin:5px 0;color:var(--muted)}
+    .tag{display:inline-block;border-radius:999px;background:var(--lav);color:var(--plum);padding:5px 10px;font-size:.78rem;font-weight:800;margin:6px 5px 0 0}
+    .skill-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}
+    .skill-card{border-radius:20px;padding:24px;background:linear-gradient(145deg,#fff,#f4edf9);border:1px solid var(--line)}
+    .skill-card h3{color:var(--plum);margin:0 0 12px}
+    .skill-card p{margin:0;color:#5e5667}
+    .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:28px}
+    .project{border:1px solid var(--line);border-radius:24px;background:#fff;overflow:hidden;box-shadow:0 12px 34px rgba(81,53,102,.06)}
+    .project-top{padding:25px;background:linear-gradient(135deg,#efe4f8,#faf7fd);border-bottom:1px solid var(--line);min-height:180px;position:relative}
+    .project-top .number{font-family:Georgia,serif;font-size:3.4rem;line-height:1;color:rgba(81,53,102,.22);position:absolute;right:22px;bottom:14px}
+    .label{font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;font-weight:850;color:var(--violet)}
+    .project-top h3{font-size:1.45rem;line-height:1.2;max-width:330px;margin:12px 0;color:var(--plum)}
+    .project-body{padding:25px}
+    .project-body p{color:#62596b}
+    .project-body ul{padding-left:20px;color:#51495a}
+    .project-body li{margin:8px 0}
+    .mini-graphic{display:flex;gap:8px;align-items:end;height:52px;margin:16px 0}
+    .mini-graphic span{display:block;width:25%;border-radius:7px 7px 2px 2px;background:#c8b0df}
+    .mini-graphic span:nth-child(1){height:40%}.mini-graphic span:nth-child(2){height:72%;background:#a98bc9}.mini-graphic span:nth-child(3){height:55%;background:#8062a8}.mini-graphic span:nth-child(4){height:90%;background:#513566}
+    .project:nth-child(2) .mini-graphic span{height:34%;border-radius:8px;background:#d9c6ea}
+    .project:nth-child(2) .mini-graphic span:nth-child(2){height:58%;background:#b99bd5}
+    .project:nth-child(2) .mini-graphic span:nth-child(3){height:76%;background:#9673b9}
+    .project:nth-child(2) .mini-graphic span:nth-child(4){height:92%;background:#6d4d91}
+    .simple-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:25px}
+    .list-card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px}
+    .list-card h3{color:var(--plum);margin-top:0}
+    .list-card li{margin:7px 0}
+    .achievements{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:26px}
+    .achievement{background:linear-gradient(145deg,#fff,#f1e8f9);border:1px solid var(--line);padding:22px;border-radius:18px}
+    .achievement strong{display:block;color:var(--plum);font-size:1.05rem}
+    .achievement span{color:var(--muted);font-size:.92rem}
+    .contact{background:var(--plum);color:#fff;padding:72px 0}
+    .contact .section-kicker{color:#d8c3ed}
+    .contact .section-title{color:#fff}
+    .contact p{color:#e6dced}
+    .contact-links{display:flex;flex-wrap:wrap;gap:12px;margin-top:25px}
+    .contact-links a{border:1px solid #a88bc5;border-radius:999px;padding:10px 15px;text-decoration:none}
+    .contact-links a:hover{background:#684783}
+    footer{background:#382446;color:#e6dced;padding:18px 0;font-size:.88rem}
+    footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+    .backtop{color:#fff}
+    @media(max-width:800px){.navlinks{display:none;position:absolute;left:4%;right:4%;top:64px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px;box-shadow:0 15px 35px rgba(81,53,102,.13);flex-direction:column;align-items:stretch}.navlinks.open{display:flex}.navlinks a{padding:8px}.menu{display:block}.hero{padding:58px 0}.hero-grid{grid-template-columns:1fr;gap:10px}.art{min-height:285px}.art:before{width:220px;height:220px}.three,.skill-grid{grid-template-columns:1fr}.projects{grid-template-columns:1fr}.simple-grid{grid-template-columns:1fr}.achievements{grid-template-columns:1fr}section{padding:58px 0}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Tejaswini Gaikwad home"><span class="monogram">TG</span><span>TEJASWINI GAIKWAD</span></a>
+    <button class="menu" id="menuButton" aria-expanded="false" aria-controls="navLinks">☰ Menu</button>
+    <nav class="navlinks" id="navLinks" aria-label="Main navigation">
+      <a href="#about">About</a><a href="#education">Education</a><a href="#skills">Skills</a><a href="#projects">Academic Projects</a><a href="#experience">Experience</a><a href="#certifications">Certifications</a><a href="#achievements">Achievements</a><a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow">Finance · Analysis · Business</div>
+        <h1>Turning Numbers Into Meaningful Decisions.</h1>
+        <h2>Hi, I'm Tejaswini Gaikwad.</h2>
+        <p class="intro">PGDM student at IMDR, Pune, with a BBA in Finance background. Interested in financial analysis, accounting, cost control, inventory management, and data-driven business decisions.</p>
+        <div class="actions"><a class="btn primary" href="#projects">Explore My Projects ↘</a><a class="btn secondary" href="https://www.linkedin.com/in/tejaswini-gaikwad-a1469a416/" target="_blank" rel="noopener noreferrer">Connect on LinkedIn ↗</a></div>
+        <p class="meta">Pune, Maharashtra · <a href="mailto:tpg2355@gmail.com">tpg2355@gmail.com</a></p>
+      </div>
+      <div class="art" aria-hidden="true">
+        <div class="art-card">
+          <small>My professional focus</small>
+          <strong>Clarity in every number.</strong>
+          <svg class="chart" viewBox="0 0 280 120" role="img" aria-label="Decorative rising line chart">
+            <g stroke="#e7dcef" stroke-width="1"><path d="M0 25H280M0 55H280M0 85H280"/><path d="M40 0V120M100 0V120M160 0V120M220 0V120"/></g>
+            <path d="M5 100 C35 94,42 78,70 82 S110 52,140 63 S185 35,210 42 S248 12,275 17" fill="none" stroke="#8062a8" stroke-width="4" stroke-linecap="round"/>
+            <path d="M5 100 C35 94,42 78,70 82 S110 52,140 63 S185 35,210 42 S248 12,275 17 L275 120 L5 120Z" fill="#e9ddf5" opacity=".45"/>
+            <circle cx="275" cy="17" r="5" fill="#513566"/>
+          </svg>
+          <div class="chart-caption"><span>Analyze</span><span>Learn</span><span>Grow</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap">
+      <div class="section-kicker">01 / About me</div>
+      <h2 class="section-title">The thinking behind the numbers.</h2>
+      <p class="lead">I am currently pursuing a PGDM at IMDR, Pune, and hold a BBA in Finance from KBPIMSR, Satara. My academic projects have given me practical exposure to cost analysis, cost control, standard-versus-actual cost comparison, and selective inventory control. I am interested in financial analysis, accounting, banking, and data-driven decision-making.</p>
+      <div class="three"><div class="pillcard">Financial Thinking</div><div class="pillcard">Analytical Approach</div><div class="pillcard">Continuous Learning</div></div>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="wrap">
+      <div class="section-kicker">02 / Education</div>
+      <h2 class="section-title">Learning, step by step.</h2>
+      <div class="timeline">
+        <article class="edu"><h3>PGDM</h3><p>Institute of Management Development and Research (IMDR), Pune</p><span class="tag">2026–2028</span><span class="tag">Currently pursuing</span></article>
+        <article class="edu"><h3>BBA — Finance</h3><p>KBPIMSR, Satara · Shivaji University, Kolhapur</p><span class="tag">2023–2026</span><span class="tag">73.63%</span></article>
+        <article class="edu"><h3>HSC — Commerce</h3><p>Kanya Shala, Wai</p><span class="tag">2023</span><span class="tag">68%</span></article>
+        <article class="edu"><h3>SSC</h3><p>Kanya Shala, Wai</p><span class="tag">2021</span><span class="tag">65%</span></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="wrap">
+      <div class="section-kicker">03 / Skills</div>
+      <h2 class="section-title">The finance skill studio.</h2>
+      <div class="skill-grid">
+        <article class="skill-card"><h3>Finance & Accounting</h3><p>Financial Accounting · Financial Analysis · Financial Statement Analysis · Cost Analysis · Cost Management · Cost Control · Inventory Management · Inventory Control</p></article>
+        <article class="skill-card"><h3>Technical & Digital</h3><p>Microsoft Excel · Advanced Tally with GST · Zoho Books · Microsoft Word · Microsoft PowerPoint</p></article>
+        <article class="skill-card"><h3>Professional Skills</h3><p>Communication · Teamwork · Problem-Solving · Time Management · Adaptability</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="wrap">
+      <div class="section-kicker">04 / Selected work</div>
+      <h2 class="section-title">Academic Projects</h2>
+      <p class="lead">Applied learning through academic projects focused on cost control and inventory management.</p>
+      <div class="projects">
+        <article class="project">
+          <div class="project-top"><span class="label">Academic Project · 01</span><h3>Costing and Cost Control Analysis</h3><span class="number">01</span><div class="mini-graphic" aria-hidden="true"><span></span><span></span><span></span><span></span></div></div>
+          <div class="project-body">
+            <p><strong>Organization:</strong> Ganesh Industries Pvt. Ltd.</p>
+            <p><strong>Project period:</strong> 15 December to 28 January (year not specified)</p>
+            <p>Studied cost-sheet data and cost-control practices to understand cost variations and their relevance to business operations.</p>
+            <ul><li>Collected and analyzed cost-sheet data.</li><li>Compared Standard Cost with Actual Cost.</li><li>Analyzed variances across different cost elements.</li><li>Prepared graphs and charts to present cost information.</li><li>Studied cost-control techniques and their role in business performance.</li></ul>
+          </div>
+        </article>
+        <article class="project">
+          <div class="project-top"><span class="label">Academic Project · 02</span><h3>Selective Inventory Control Techniques</h3><span class="number">02</span><div class="mini-graphic" aria-hidden="true"><span></span><span></span><span></span><span></span></div></div>
+          <div class="project-body">
+            <p><strong>Organization:</strong> Ganesh Industries Pvt. Ltd.</p>
+            <p><strong>Project period:</strong> 1 July to 30 September (year not specified)</p>
+            <p>Studied selective inventory control techniques to understand stock classification, inventory prioritization, and inventory management practices.</p>
+            <ul><li>Studied inventory control and stock-management practices.</li><li>Applied ABC, HML, VED, and FSN inventory classification techniques.</li><li>Analyzed inventory data to understand stock prioritization.</li><li>Explored how selective inventory control supports inventory efficiency.</li></ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="wrap">
+      <div class="section-kicker">05 / Experience</div>
+      <h2 class="section-title">Building practical understanding.</h2>
+      <p class="lead">My practical exposure comes from academic projects involving costing, cost control, and inventory management. These projects helped me apply classroom concepts to business-related information and develop an analytical approach.</p>
+      <p class="meta">No employment or internship is claimed in this section.</p>
+    </div>
+  </section>
+
+  <section id="certifications">
+    <div class="wrap">
+      <div class="section-kicker">06 / Certifications</div>
+      <h2 class="section-title">Knowledge in practice.</h2>
+      <div class="three"><div class="card"><h3>Advanced Tally</h3><p class="meta">Certification</p></div><div class="card"><h3>Advanced Excel</h3><p class="meta">Certification</p></div><div class="card"><h3>MS-CIT</h3><p class="meta">Certification</p></div></div>
+    </div>
+  </section>
+
+  <section id="achievements">
+    <div class="wrap">
+      <div class="section-kicker">07 / Achievements</div>
+      <h2 class="section-title">Beyond the classroom.</h2>
+      <div class="achievements">
+        <div class="achievement"><strong>Gold Medal</strong><span>School-Level Sports Camp</span></div>
+        <div class="achievement"><strong>Silver Medal</strong><span>Prathama Sanskrit Examination, Grade 8</span></div>
+        <div class="achievement"><strong>Bronze Medal</strong><span>Dvitiya Sanskrit Examination, Grade 9</span></div>
+      </div>
+      <h3 style="color:var(--plum);margin:28px 0 10px">Languages</h3><span class="tag">English</span><span class="tag">Hindi</span><span class="tag">Marathi</span>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div class="section-kicker">08 / Contact</div>
+      <h2 class="section-title">Good decisions begin with meaningful conversations.</h2>
+      <p>Tejaswini Gaikwad · Pune, Maharashtra</p>
+      <div class="contact-links"><a href="mailto:tpg2355@gmail.com">Email me ↗</a><a href="https://www.linkedin.com/in/tejaswini-gaikwad-a1469a416/" target="_blank" rel="noopener noreferrer">LinkedIn profile ↗</a></div>
+    </div>
+  </section>
+</main>
+<footer><div class="wrap"><span>© Tejaswini Gaikwad · Finance Portfolio</span><a class="backtop" href="#top">Back to top ↑</a></div></footer>
+<script>
+  const menuButton = document.getElementById('menuButton');
+  const navLinks = document.getElementById('navLinks');
+  menuButton.addEventListener('click', () => {
+    const open = navLinks.classList.toggle('open');
+    menuButton.setAttribute('aria-expanded', String(open));
+    menuButton.textContent = open ? '✕ Close' : '☰ Menu';
+  });
+  navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    menuButton.setAttribute('aria-expanded', 'false');
+    menuButton.textContent = '☰ Menu';
+  }));
+</script>
+</body>
+</html>
