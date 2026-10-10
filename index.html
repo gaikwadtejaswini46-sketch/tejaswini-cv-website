@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tejaswini Gaikwad - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #f7f4f9;
+            --accent-purple: #4a2c59;
+            --light-purple: #e8dff0;
+            --text-main: #2b2b2b;
+            --text-muted: #6b6b6b;
+            --white: #ffffff;
+            --border-color: #d1c7dc;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--bg-color); color: var(--text-main); line-height: 1.6; padding: 2rem 1rem; }
+        .container { max-width: 1100px; margin: 0 auto; background: var(--white); padding: 3rem; border-radius: 8px; box-shadow: 0 4px 20px rgba(74, 44, 89, 0.05); }
+        .header-top { display: flex; justify-content: space-between; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 2rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem; }
+        .hero { display: grid; grid-template-columns: 2fr 1fr; gap: 2rem; align-items: center; margin-bottom: 4rem; }
+        .hero-title { font-family: 'Playfair Display', serif; font-size: 3.5rem; font-weight: 400; color: var(--accent-purple); line-height: 1.1; margin-bottom: 1.5rem; font-style: italic; }
+        .hero-title span { display: block; font-style: normal; }
+        .hero-subtitle { font-size: 1rem; color: var(--text-muted); margin-bottom: 1.5rem; }
+        .hero-desc { font-size: 0.95rem; color: var(--text-main); margin-bottom: 2rem; max-width: 500px; }
+        .btn-cv { display: inline-block; padding: 0.75rem 1.5rem; border: 1px solid var(--accent-purple); color: var(--accent-purple); text-decoration: none; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease; }
+        .btn-cv:hover { background-color: var(--accent-purple); color: var(--white); }
+        .contact-info { font-size: 0.85rem; color: var(--text-muted); margin-top: 1rem; }
+        section { margin-bottom: 4rem; }
+        .section-tag { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-muted); margin-bottom: 0.5rem; }
+        .section-heading { font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--accent-purple); margin-bottom: 2rem; }
+        .thinking-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+        .thinking-text p { margin-bottom: 1rem; font-size: 0.95rem; }
+        .skills-nav { display: flex; justify-content: space-between; font-size: 0.85rem; color: var(--text-muted); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); padding: 1rem 0; margin-top: 1.5rem; }
+        .edu-item { display: flex; justify-content: space-between; align-items: baseline; padding: 1.5rem 0; border-bottom: 1px solid var(--border-color); }
+        .edu-degree { font-family: 'Playfair Display', serif; font-size: 1.25rem; color: var(--accent-purple); }
+        .edu-institution { font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem; }
+        .edu-year { font-size: 0.85rem; color: var(--text-muted); text-align: right; }
+        .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+        .skill-card { background: var(--bg-color); padding: 2rem; border: 1px solid var(--border-color); }
+        .skill-card h3 { font-family: 'Playfair Display', serif; font-size: 1.25rem; color: var(--accent-purple); margin-bottom: 1.5rem; }
+        .skill-card ul { list-style: none; }
+        .skill-card li { font-size: 0.9rem; margin-bottom: 0.75rem; color: var(--text-muted); }
+        .project-card { border: 1px solid var(--border-color); padding: 2rem; margin-bottom: 2rem; }
+        .project-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.5rem; }
+        .project-title { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--accent-purple); }
+        .project-date { font-size: 0.85rem; color: var(--text-muted); }
+        .project-desc { font-size: 0.95rem; margin-bottom: 1.5rem; color: var(--text-main); }
+        .project-section-title { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: var(--accent-purple); margin-bottom: 0.75rem; font-weight: 600; }
+        .key-findings-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem; }
+        .finding-box { background: var(--bg-color); padding: 1rem; font-size: 0.85rem; border-left: 2px solid var(--accent-purple); }
+        .cert-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+        .cert-card { border: 1px solid var(--border-color); padding: 1.5rem; }
+        .cert-num { font-size: 0.75rem; color: var(--text-muted); margin-bottom: 0.5rem; }
+        .cert-name { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--accent-purple); margin-bottom: 0.5rem; }
+        footer { border-top: 1px solid var(--border-color); padding-top: 3rem; margin-top: 4rem; }
+        .footer-quote { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: var(--accent-purple); font-style: italic; margin-bottom: 2rem; }
+        .footer-details { display: flex; justify-content: space-between; align-items: flex-end; }
+        .footer-info h4 { font-size: 1rem; color: var(--accent-purple); margin-bottom: 0.5rem; }
+        .footer-info p { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.25rem; }
+        @media (max-width: 768px) {
+            .container { padding: 1.5rem; }
+            .hero, .thinking-grid, .skills-grid, .cert-grid, .key-findings-grid { grid-template-columns: 1fr; }
+            .hero-title { font-size: 2.5rem; }
+            .edu-item { gap: 1rem; }
+            .skills-nav { flex-wrap: wrap; gap: .5rem; }
+            .footer-quote { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header-top">
+            <div>Finance • Analysis • Business</div>
+            <div>Portfolio / 2026</div>
+        </div>
+        <header class="hero">
+            <div>
+                <h1 class="hero-title">Turning Numbers <span>Into Meaningful</span> Decisions.</h1>
+                <p class="hero-subtitle">Hi, I'm Tejaswini Gaikwad.</p>
+                <p class="hero-desc">An aspiring finance professional interested in financial analysis, accounting, cost control, inventory management, and data-driven business decisions.</p>
+                <a href="#" class="btn-cv">Download CV ↓</a>
+                <div class="contact-info">Pune, Maharashtra &bull; teji109@gmail.com</div>
+            </div>
+        </header>
+
+        <section>
+            <div class="section-tag">01 / OUR THINKING</div>
+            <h2 class="section-heading">The thinking behind the numbers</h2>
+            <div class="thinking-grid">
+                <div class="thinking-text">
+                    <p>I am currently pursuing a PGDM at IMDR, Pune, and hold a BBA in Finance from KBSMSK, Satara. My academic projects have given me practical exposure to cost analysis, cost control, standard-versus-actual cost comparison, and selective inventory control.</p>
+                    <p>I am interested in financial accounting, banking, and data-driven decision making.</p>
+                </div>
+                <div><div class="skills-nav"><span>Financial Modeling</span><span>Analytical Approach</span><span>Continuous Learning</span></div></div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-tag">02 / ACADEMIC JOURNEY</div>
+            <h2 class="section-heading">Education</h2>
+            <div class="edu-item"><div><div class="edu-degree">PGDM</div><div class="edu-institution">Institute of Management Development and Research (IMDR), Pune</div></div><div class="edu-year">2024 - 2026<br><small style="color:var(--accent-purple);">Expected: Running</small></div></div>
+            <div class="edu-item"><div><div class="edu-degree">BBA, Finance</div><div class="edu-institution">KBSMSK, Shivaji University, Kolhapur</div></div><div class="edu-year">2021 - 2024</div></div>
+            <div class="edu-item"><div><div class="edu-degree">BSC, Commerce</div><div class="edu-institution">Karmaveer Bhaurao Patil</div></div><div class="edu-year">2021</div></div>
+            <div class="edu-item"><div><div class="edu-degree">SSC</div><div class="edu-institution">Karmaveer Bhaurao Patil</div></div><div class="edu-year">2019</div></div>
+        </section>
+
+        <section>
+            <div class="section-tag">03 / CORE COMPETENCIES</div>
+            <h2 class="section-heading">The finance skill studio</h2>
+            <div class="skills-grid">
+                <div class="skill-card"><h3>Finance &amp; Accounting</h3><ul><li>Financial Accounting</li><li>Financial Statement Analysis</li><li>Cost Analysis</li><li>Cost Control</li><li>Management Accounting</li><li>Inventory Control</li></ul></div>
+                <div class="skill-card"><h3>Technical &amp; Digital Skills</h3><ul><li>Microsoft Excel</li><li>Advanced Tally with GST</li><li>Zohooks Books</li><li>Microsoft Word</li><li>Microsoft PowerPoint</li></ul></div>
+                <div class="skill-card"><h3>Professional Skills</h3><ul><li>Communication</li><li>Teamwork</li><li>Problem Solving</li><li>Time Management</li><li>Adaptability</li></ul></div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-tag">04 / KEY LEARNINGS</div>
+            <h2 class="section-heading">Academic Projects</h2>
+            <div class="project-card">
+                <div class="project-header"><div><h3 class="project-title">Costing and Cost Control Analysis</h3></div><div class="project-date">15 December - 20 January</div></div>
+                <p class="project-desc">Built understanding of how cost analysis and cost control operations support business decisions and reference to business operations.</p>
+                <div class="project-section-title">Key Options</div>
+                <div class="key-findings-grid"><div class="finding-box">Built understanding of how Standard Cost and Actual Cost comparison supports variance analysis and cost control decisions.</div></div>
+                <div class="project-section-title">Key Attractors</div>
+                <div class="key-findings-grid"><div class="finding-box">Compared Standard Cost with Actual Cost.</div><div class="finding-box">Analyzed variances to understand cost efficiency.</div></div>
+            </div>
+            <div class="project-card">
+                <div class="project-header"><div><h3 class="project-title">Selective Inventory Control Techniques</h3></div><div class="project-date">1 July - 30 September</div></div>
+                <p class="project-desc">Studied selective inventory control techniques to understand stock classification, inventory optimization, and inventory management practices.</p>
+                <div class="project-section-title">Classification Tools</div>
+                <div class="key-findings-grid"><div class="finding-box">ABC Analysis</div><div class="finding-box">VED Analysis</div></div>
+                <div class="project-section-title">Key Attractors</div>
+                <div class="key-findings-grid"><div class="finding-box">Studied selective inventory control techniques.</div><div class="finding-box">Analyzed ABC, VED, and FSN classification for optimal efficiency.</div></div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-tag">05 / PROMISE IN PRACTICE</div>
+            <h2 class="section-heading">Certifications</h2>
+            <div class="cert-grid">
+                <div class="cert-card"><div class="cert-num">01 /</div><div class="cert-name">Advanced Tally</div><div class="edu-institution">Maharashtra Knowledge Corporation Limited (MKCL)</div></div>
+                <div class="cert-card"><div class="cert-num">02 /</div><div class="cert-name">Advanced Excel</div><div class="edu-institution">Maharashtra Knowledge Corporation Limited (MKCL)</div></div>
+                <div class="cert-card"><div class="cert-num">03 /</div><div class="cert-name">MS-CIT</div><div class="edu-institution">Maharashtra Knowledge Corporation Limited (MKCL)</div></div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="footer-quote">Good decisions begin with meaningful conversations.</div>
+            <div class="footer-details">
+                <div class="footer-info"><h4>Tejaswini Gaikwad</h4><p>Pune, Maharashtra</p><p>teji109@gmail.com</p><p>LinkedInprofile</p></div>
+                <a href="#" class="btn-cv">Download CV ↓</a>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
